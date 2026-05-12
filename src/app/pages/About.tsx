@@ -1,4 +1,5 @@
 import { Heart, MapPin, Users, Sparkles } from 'lucide-react';
+import lombosMap from '@/assets/lombos-map.jpg';
 
 export function About() {
   const values = [
@@ -155,8 +156,12 @@ export function About() {
               </div>
             </div>
 
-            <div className="bg-[#E5E7EB] rounded-[16px] h-96 flex items-center justify-center">
-              <p className="text-[#6B7280]">Google Maps Placeholder</p>
+            <div className="rounded-[16px] h-96 overflow-hidden" style={{ boxShadow: 'var(--shadow-card)' }}>
+              <img
+                src={lombosMap}
+                alt="Map showing Lombos St. San Isidro, Parañaque City"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
