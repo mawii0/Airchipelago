@@ -1,6 +1,8 @@
 import { Link } from 'react-router';
 import { Plane, MapPin, Heart, DollarSign, Star } from 'lucide-react';
 import { SearchWidget } from '../components/SearchWidget';
+import atrImage from '@/assets/ATR.jpeg';
+import q400Image from '@/assets/Q400.jpeg';
 
 export function Home() {
   const destinations = [
@@ -191,7 +193,7 @@ export function Home() {
           <div className="space-y-16">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <img
-                src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=600&fit=crop"
+                src={atrImage}
                 alt="ATR 72-600"
                 className="w-full h-80 object-cover rounded-[16px]"
                 style={{ boxShadow: 'var(--shadow-card)' }}
@@ -210,7 +212,7 @@ export function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="md:order-2">
                 <img
-                  src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=800&h=600&fit=crop"
+                  src={q400Image}
                   alt="Dash 8 Q400"
                   className="w-full h-80 object-cover rounded-[16px]"
                   style={{ boxShadow: 'var(--shadow-card)' }}

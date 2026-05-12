@@ -1,30 +1,7 @@
+import atrImage from '@/assets/ATR.jpeg'
+import q400Image from '@/assets/Q400.jpeg'
+
 export function Fleet() {
-  const aircraft = [
-    {
-      name: 'ATR 72-600',
-      badge: 'SHORT-HAUL SPECIALIST',
-      description: 'The ATR 72-600 is perfect for short runways and smaller island airports like Camiguin and Siargao. It is fuel-efficient, reliable, and ideal for scenic low-altitude flights.',
-      specs: {
-        capacity: '70 passengers',
-        range: '1,528 km',
-        speed: '510 km/h',
-        routes: 'Camiguin, Siargao, Bantayan, Hundred Islands'
-      },
-      image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&h=800&fit=crop'
-    },
-    {
-      name: 'De Havilland Canada Dash 8 Q400',
-      badge: 'LONG-HAUL REGIONAL',
-      description: 'For longer routes such as Palawan and Boracay, we operate the Dash 8 Q400. It cruises faster while maintaining turboprop efficiency, making it perfect for regional island connections.',
-      specs: {
-        capacity: '78 passengers',
-        range: '2,040 km',
-        speed: '667 km/h',
-        routes: 'Palawan, Boracay, Bohol'
-      },
-      image: 'https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=1200&h=800&fit=crop'
-    },
-  ];
 
   return (
     <div className="min-h-screen pt-20 pb-16">
@@ -38,58 +15,50 @@ export function Fleet() {
         </div>
       </div>
 
-      {/* Aircraft Cards */}
-      <section className="py-16 bg-[#F7F8FC]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
-          {aircraft.map((plane, index) => (
-            <div
-              key={plane.name}
-              className={`grid md:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? 'md:grid-flow-dense' : ''
-              }`}
-            >
-              <div className={index % 2 === 1 ? 'md:col-start-2' : ''}>
+      {/* Fleet Preview Section */}
+      <section className="py-20 bg-[#F7F8FC]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-semibold text-[#1A2C6E] mb-12">Our Fleet</h2>
+
+          <div className="space-y-16">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <img
+                src={atrImage}
+                alt="ATR 72-600"
+                className="w-full h-80 object-cover rounded-[16px]"
+                style={{ boxShadow: 'var(--shadow-card)' }}
+              />
+              <div>
+                <h3 className="text-2xl font-semibold text-[#1A2C6E] mb-4">ATR 72-600</h3>
+                <p className="text-[#6B7280] mb-4">
+                  Perfect for short-runway island airports
+                </p>
+                <p className="text-[#6B7280]">
+                  The ATR 72-600 is ideal for scenic low-altitude flights to destinations like Camiguin and Siargao.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="md:order-2">
                 <img
-                  src={plane.image}
-                  alt={plane.name}
-                  className="w-full h-96 object-cover rounded-[16px]"
+                  src={q400Image}
+                  alt="Dash 8 Q400"
+                  className="w-full h-80 object-cover rounded-[16px]"
                   style={{ boxShadow: 'var(--shadow-card)' }}
                 />
               </div>
-
-              <div className={index % 2 === 1 ? 'md:col-start-1 md:row-start-1' : ''}>
-                <div className="inline-block px-4 py-2 bg-[#FDE9B8] text-[#1A2C6E] rounded-[99px] text-xs font-medium uppercase mb-4" style={{ fontFamily: 'var(--font-mono)', letterSpacing: '0.08em' }}>
-                  {plane.badge}
-                </div>
-
-                <h2 className="text-3xl font-semibold text-[#1A2C6E] mb-4">{plane.name}</h2>
-
-                <p className="text-[#6B7280] mb-8 text-lg leading-relaxed">{plane.description}</p>
-
-                <div className="bg-white rounded-[16px] p-6" style={{ boxShadow: 'var(--shadow-card)' }}>
-                  <h3 className="font-semibold text-[#1A2C6E] mb-4">Specifications</h3>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <div className="text-sm text-[#6B7280] mb-1">Capacity</div>
-                      <div className="font-medium text-[#1A2C6E]">{plane.specs.capacity}</div>
-                    </div>
-                    <div>
-                      <div className="text-sm text-[#6B7280] mb-1">Range</div>
-                      <div className="font-medium text-[#1A2C6E]">{plane.specs.range}</div>
-                    </div>
-                    <div>
-                      <div className="text-sm text-[#6B7280] mb-1">Cruise Speed</div>
-                      <div className="font-medium text-[#1A2C6E]">{plane.specs.speed}</div>
-                    </div>
-                    <div className="col-span-2">
-                      <div className="text-sm text-[#6B7280] mb-1">Primary Routes</div>
-                      <div className="font-medium text-[#1A2C6E]">{plane.specs.routes}</div>
-                    </div>
-                  </div>
-                </div>
+              <div className="md:order-1">
+                <h3 className="text-2xl font-semibold text-[#1A2C6E] mb-4">De Havilland Canada Dash 8 Q400</h3>
+                <p className="text-[#6B7280] mb-4">
+                  Ideal for longer routes like Palawan and Boracay
+                </p>
+                <p className="text-[#6B7280]">
+                  For extended regional flights, the Dash 8 Q400 provides speed and efficiency perfect for island connections.
+                </p>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
